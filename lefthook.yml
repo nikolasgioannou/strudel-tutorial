@@ -1,0 +1,29 @@
+# Lefthook git hooks — https://lefthook.dev/configuration/
+#
+# All checks live in pre-commit. They run sequentially (piped: true) because
+# ESLint --fix and Prettier --write can both rewrite the same files, and we
+# want a deterministic order: ESLint first (auto-fixes imports, simple issues),
+# then Prettier (final formatting pass), then typecheck (read-only, but cheap
+# to fail-fast on if the earlier steps broke anything).
+
+output:
+  - meta
+  - summary
+  - failure
+
+pre-commit:
+  piped: true # sequential; halt on first failure
+  commands:
+    eslint:
+      glob: '*.{js,jsx,ts,tsx}'
+      run: bunx eslint --fix --no-warn-ignored {staged_files}
+      stage_fixed: true
+
+    prettier:
+      glob: '*.{js,jsx,ts,tsx,json,jsonc,css,md,yml,yaml,html}'
+      run: bunx prettier --write --ignore-unknown {staged_files}
+      stage_fixed: true
+
+    typecheck:
+      # tsc needs the whole project context, not just staged files.
+      run: bun run typecheck

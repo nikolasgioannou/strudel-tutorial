@@ -1,0 +1,34 @@
+# build outputs
+dist
+build
+coverage
+.cache
+
+# deps
+node_modules
+
+# lockfiles
+bun.lockb
+bun.lock
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# generated
+*.min.js
+*.min.css
+*.map
+
+# bun cache
+.bun
+
+# env
+.env*
+!.env.example
+
+# the knowledge-base notes — markdown stays as-authored
+notes
+
+# misc
+*.log
+.DS_Store

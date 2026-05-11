@@ -1,0 +1,5 @@
+# Register bun-plugin-tailwind so Bun.serve's HTML bundler can process Tailwind v4.
+# This is only read by the dev server / Bun.serve — production builds via build.ts
+# load plugins explicitly through Bun.build({ plugins: [...] }).
+[serve.static]
+plugins = ["bun-plugin-tailwind"]

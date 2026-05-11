@@ -1,0 +1,51 @@
+/* Tailwind v4: one import, no PostCSS, no JS config. */
+@import 'tailwindcss';
+
+/*
+ * CSS-first config — replaces tailwind.config.js. Custom properties under
+ * @theme automatically generate utilities (e.g. --color-brand-500 → bg-brand-500).
+ */
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* Strudel-ish accent — warm orange against the dark neutral base. */
+  --color-brand-50: oklch(0.97 0.03 50);
+  --color-brand-100: oklch(0.93 0.06 50);
+  --color-brand-300: oklch(0.82 0.13 50);
+  --color-brand-500: oklch(0.72 0.18 50);
+  --color-brand-700: oklch(0.55 0.18 50);
+  --color-brand-900: oklch(0.32 0.12 50);
+}
+
+/* Sane defaults beyond Tailwind preflight. */
+html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/*
+ * The <strudel-editor> custom element is just a marker — its connectedCallback
+ * inserts a new <div> as its next sibling and renders CodeMirror into THAT.
+ * The element itself stays empty. So we collapse the marker; the surrounding
+ * container component handles the visual shell (border, radius, overflow).
+ */
+strudel-editor {
+  display: contents;
+}
+
+/*
+ * Inline `<code>` styling — Notion/markdown style. Subtle background, monospace,
+ * brand-tinted text. `:not(pre) > code` skips code inside pre blocks if/when
+ * we add them, and CodeMirror uses spans (not <code>) for its highlighting,
+ * so this rule is safe to apply globally.
+ */
+:not(pre) > code {
+  background-color: var(--color-neutral-800);
+  color: var(--color-brand-300);
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  white-space: nowrap;
+}
