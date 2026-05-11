@@ -6,6 +6,11 @@ import * as lesson04 from './04-billie-jean';
 import * as lesson05 from './05-seven-nation-army';
 import * as lesson06 from './06-scales';
 import * as lesson07 from './07-billie-jean-bass';
+import * as lesson08 from './08-note-durations';
+import * as lesson09 from './09-filters-and-envelopes';
+import * as lesson10 from './10-pattern-transforms';
+import * as lesson11 from './11-chords-stand-by-me';
+import * as lesson12 from './12-every-and-off';
 
 /** Metadata that every lesson exports alongside its component. */
 export interface LessonMeta {
@@ -32,6 +37,11 @@ export const lessons: Lesson[] = [
   { ...lesson05.meta, Component: lesson05.Lesson },
   { ...lesson06.meta, Component: lesson06.Lesson },
   { ...lesson07.meta, Component: lesson07.Lesson },
+  { ...lesson08.meta, Component: lesson08.Lesson },
+  { ...lesson09.meta, Component: lesson09.Lesson },
+  { ...lesson10.meta, Component: lesson10.Lesson },
+  { ...lesson11.meta, Component: lesson11.Lesson },
+  { ...lesson12.meta, Component: lesson12.Lesson },
 ];
 
 export function findLesson(slug: string): Lesson | undefined {
