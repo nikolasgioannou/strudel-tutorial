@@ -59,10 +59,33 @@ export function Lesson() {
       <StrudelEditor code={drumsStage.code} />
 
       <p>
-        Now the bass — eight notes per bar in straight 8th notes. <code>F#2</code> is the root of F#
-        minor, <code>C#2</code> is the fifth, <code>E2</code> is the flat seventh that gives the
-        line its dorian/minor flavour, and <code>B1</code> is a passing tone walking back up to{' '}
-        <code>C#2</code>:
+        Now the bass. Every note in the line is doing a specific harmonic job — none of them are
+        random.
+      </p>
+      <ul className="ml-5 list-disc space-y-1 text-sm">
+        <li>
+          <code>F#2</code> — the <strong>root</strong> of F# minor. Every chord has a "home" note;
+          this is it.
+        </li>
+        <li>
+          <code>C#2</code> — the <strong>perfect 5th</strong>. The root and the 5th together form
+          the most stable interval in music; rock "power chords" are nothing but a root and a 5th.
+        </li>
+        <li>
+          <code>E2</code> — the <strong>minor 7th</strong>. Going from F# to E adds tension; it
+          turns F#m into F#m7 and makes the line feel like it wants to keep moving.
+        </li>
+        <li>
+          <code>B1</code> — the <strong>4th</strong>. It's a <em>passing tone</em>: a note that
+          doesn't belong to the chord, but bridges between two chord tones (here it walks from C#
+          back down and then back up to C#). Passing tones are how bass lines become melodies
+          instead of just chord arpeggios.
+        </li>
+      </ul>
+      <p>
+        Together those four pitches outline F#m7 with one decorative passing tone. That's the recipe
+        for a huge proportion of funk and pop basslines:{' '}
+        <em>play the chord tones, walk between them with passing tones, stay in time.</em>
       </p>
       <StrudelEditor
         code={`setcpm(117/4)

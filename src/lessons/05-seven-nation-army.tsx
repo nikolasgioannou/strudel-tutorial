@@ -42,6 +42,12 @@ export function Lesson() {
         different octaves.
       </p>
       <StrudelEditor code={`note("c2 c3 c4 c5").s("piano")`} />
+      <p className="text-sm text-neutral-500">
+        An <em>octave</em> is the distance from a note to the next note with the same letter. Two
+        notes an octave apart sound like "the same note, higher" — that's because the higher one
+        vibrates at exactly twice the frequency. The bottom note of a piano is around 28 Hz, the top
+        is around 4 kHz. Most melodies sit between octaves 3 and 5; bass lives in octaves 1 and 2.
+      </p>
 
       <h2 className="text-lg font-semibold text-neutral-100">Picking an instrument</h2>
       <p>
@@ -60,7 +66,19 @@ export function Lesson() {
       <SongCard track={sevenNationArmy} />
 
       <p>
-        Start with just the first three: <code>e2 e2 g2</code>.
+        Before we play it, look at what those notes <em>are</em>. The song is in{' '}
+        <strong>E minor</strong>, and the riff is built almost entirely from chord tones of E minor
+        — E itself (the <em>root</em>), G (the <em>minor 3rd</em> above E, which is what makes a
+        chord sound "sad" instead of "happy"), and B (the <em>5th</em>, which always sounds stable).
+        The D and C at the end are the <em>flat 7th</em> and the <em>flat 6th</em>, bluesy tones
+        borrowed from the E minor scale. The final descent C → B is a <em>lament</em> — a half-step
+        downward move that's signalled finality and sadness in music for centuries.
+      </p>
+      <p>
+        Start with just the first three: <code>e2 e2 g2</code>. That little jump from E up to G is
+        the <strong>minor 3rd</strong> — instantly recognisable as "minor". If we'd jumped to G#
+        instead it would be a <strong>major 3rd</strong>, and the riff would sound completely
+        different (happy, almost cheery).
       </p>
       <StrudelEditor code={`note("e2 e2 g2").s("gm_acoustic_bass")`} />
 

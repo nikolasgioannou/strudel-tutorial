@@ -71,6 +71,50 @@ n("2 2 3 4 4 3 2 1 0 0 1 2 2 1 1").scale("A:minor").s("piano")`}
 n("2 2 3 4 4 3 2 1 0 0 1 2 2 1 1").scale("D:dorian").s("piano")`}
       />
 
+      <h2 className="text-lg font-semibold text-neutral-100">Why do scales sound different?</h2>
+      <p>
+        The 12 notes you can play on a piano (white plus black keys) are evenly spaced — each one is
+        a <em>half step</em> from the next. A scale is just a particular pattern of half steps and
+        whole steps (a whole step = two half steps).
+      </p>
+      <p>
+        Major and minor are the famous pair, and they differ in <em>one critical place</em>: the gap
+        between the 1st and 3rd notes.
+      </p>
+      <ul className="ml-5 list-disc space-y-1 text-sm">
+        <li>
+          <strong>Major</strong>: 1 to 3 is <em>four half steps</em> apart (a major 3rd). C → E on
+          the piano. This is the "happy/bright" interval — it's the difference between a children's
+          song and a funeral march.
+        </li>
+        <li>
+          <strong>Minor</strong>: 1 to 3 is <em>three half steps</em> apart (a minor 3rd). A → C on
+          the piano. Same song, one note shifted, completely different emotional weight.
+        </li>
+      </ul>
+      <p>
+        Every other "mode" is a different pattern of half- and whole-steps over the 7-note span, and
+        each has a personality:
+      </p>
+      <ul className="ml-5 list-disc space-y-1 text-sm">
+        <li>
+          <strong>Lydian</strong> — major with a raised 4th. Floating, dreamy. (Think{' '}
+          <em>The Simpsons</em> theme.)
+        </li>
+        <li>
+          <strong>Mixolydian</strong> — major with a flat 7th. Bluesy, folky. (Most Beatles riffs.)
+        </li>
+        <li>
+          <strong>Dorian</strong> — minor with a raised 6th. Funky-minor. (Miles Davis's{' '}
+          <em>So What</em>.)
+        </li>
+        <li>
+          <strong>Phrygian</strong> — minor with a flat 2nd. Spanish, metal, exotic.
+        </li>
+        <li>
+          <strong>Locrian</strong> — almost never the home key; sounds unresolved.
+        </li>
+      </ul>
       <p className="text-sm text-neutral-500">
         The scale name format is <code>Root:Type</code> with a colon, no space. Strudel knows all
         the standard modes (major, minor, dorian, phrygian, lydian, mixolydian, locrian) plus many

@@ -28,6 +28,29 @@ export function Lesson() {
         equal slots and plays one drum per slot.
       </p>
 
+      <p>
+        Those three sounds aren't a random choice. <strong>Kick, snare, and hi-hat</strong> are the
+        spine of almost every pop, rock, hip-hop, and dance record ever made. They each live in a
+        different part of the frequency spectrum, so they stay out of each other's way:
+      </p>
+      <ul className="ml-5 list-disc space-y-1 text-sm text-neutral-300">
+        <li>
+          <strong>Kick</strong> (low) — the weight. The thump you feel in your chest. Usually
+          carries the downbeat.
+        </li>
+        <li>
+          <strong>Snare</strong> (mid) — the punch. Usually on beats 2 and 4, the so-called{' '}
+          <em>backbeat</em> that makes heads nod.
+        </li>
+        <li>
+          <strong>Hi-hat</strong> (high) — the pulse. Fast ticking that drives forward motion.
+        </li>
+      </ul>
+      <p>
+        Most of the next few lessons are about arranging these three in different ways across time.
+        Once you have a feel for that, you can rebuild most beats you've ever heard.
+      </p>
+
       <section className="card space-y-3">
         <h3 className="text-sm font-medium tracking-wider text-brand-300 uppercase">Try this</h3>
         <p>Edit the code below and press play again. A few things to try one at a time:</p>

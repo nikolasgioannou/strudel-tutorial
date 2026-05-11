@@ -18,13 +18,22 @@ export function Lesson() {
         this.
       </p>
 
+      <p>
+        Musically, this is about <strong>subdivisions of a beat</strong>. In 4/4 time, one bar is 4
+        beats. If you split each beat in half you get <em>8th notes</em> (8 per bar); split in
+        quarters and you get <em>16th notes</em> (16 per bar). Quarter notes feel patient and
+        marching; 8ths drive the groove; 16ths feel busy and urgent. The whole personality of a beat
+        comes from which level you mostly live on.
+      </p>
+
       <h2 className="text-lg font-semibold text-neutral-100">
         Brackets <code>[ ]</code> — subdivide a slot
       </h2>
       <p>
         Whatever is inside <code>[]</code> is treated as one slot of the outer sequence. So{' '}
         <code>"bd [hh hh] sd"</code> still has three top-level slots — but the middle one holds two
-        hi-hats sharing the time.
+        hi-hats sharing the time. If the outer slots are quarter notes, those two bracketed hats are
+        8th notes.
       </p>
       <StrudelEditor code={`sound("bd [hh hh] sd [hh bd] bd ~ [hh sd] cp")`} />
       <p>You can nest brackets as deep as you want. Each one creates a new sub-cycle.</p>
@@ -50,6 +59,11 @@ export function Lesson() {
       <p>
         A tilde is a slot where nothing plays. Crucially, the slot still <em>exists</em>: it takes
         up its share of the cycle. Rests are how you carve space into a beat.
+      </p>
+      <p className="text-sm text-neutral-500">
+        Space matters as much as sound. A funk drummer once said the rests <em>are</em> the groove —
+        what you don't play tells the listener where the beat is. The kick-snare gaps in a hip-hop
+        pattern are the rests that make you feel the swing.
       </p>
       <StrudelEditor code={`sound("bd ~ sd ~ bd ~ ~ sd")`} />
 

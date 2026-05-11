@@ -35,10 +35,16 @@ export function Lesson() {
       <StrudelEditor code={`sound("bd*2 cp")`} />
 
       <p>
-        Close, but the song has a specific tempo: <strong>81 beats per minute</strong>. Strudel
-        thinks in cycles, not beats. The function <code>setcpm()</code> sets cycles per minute. Our
-        pattern spans two beats (stomp-stomp-clap = two beats), so a cycle covers half a bar —
-        that's <code>81 / 2</code> cycles per minute.
+        Close, but the song has a specific tempo: <strong>81 beats per minute</strong>. <em>BPM</em>{' '}
+        just counts how many "pulses" pass in a minute — a slow ballad sits around 60–70 BPM, a
+        typical pop song 100–130, house and techno 120–130, drum-and-bass 170+. The stomp pattern
+        lands two events on each beat (boom-boom-clap, boom-boom-clap), so the song feels like 81
+        strong pulses per minute.
+      </p>
+      <p>
+        Strudel thinks in <em>cycles</em>, not beats. The function <code>setcpm()</code> sets cycles
+        per minute. Our pattern spans two beats (stomp-stomp-clap = two beats), so a cycle covers
+        half a bar — that's <code>81 / 2</code> cycles per minute.
       </p>
       <StrudelEditor
         code={`setcpm(81/2)
@@ -47,8 +53,11 @@ sound("bd*2 cp")`}
 
       <p>
         The studio recording uses body percussion — feet on bleachers, hands clapping. We can get a
-        vintage drum-machine version with <code>.bank("RolandTR707")</code>. The pattern stays the
-        same; only the sample source changes.
+        vintage drum-machine version with <code>.bank("RolandTR707")</code>. A drum machine is an
+        instrument: from the late 70s onward, machines like Roland's TR-808 and TR-909 didn't just
+        emulate real drums, they <em>defined</em> the sound of whole genres — the 808's deep kick is
+        hip-hop, the 909's snappy clap is house. Different bank, same pattern, completely different
+        vibe.
       </p>
       <StrudelEditor code={drumsStage.code} />
 

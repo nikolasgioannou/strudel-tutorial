@@ -41,17 +41,27 @@ export function Lesson() {
       <SongCard track={billieJean} />
 
       <p>
-        Start with the kick. It lands on beats 1 and 3 — the "down" feel of the groove. With four
-        beats per cycle, that's <code>"bd ~ bd ~"</code>.
+        Start with the kick. It lands on beats 1 and 3 — the <strong>downbeats</strong>, the strong
+        "one" and "three" you'd count out loud. With four beats per cycle that's{' '}
+        <code>"bd ~ bd ~"</code>: hit, rest, hit, rest.
       </p>
       <StrudelEditor code={`sound("bd ~ bd ~")`} />
 
-      <p>Add the snare on beats 2 and 4 — the backbeat:</p>
+      <p>
+        Add the snare on beats 2 and 4 — the <strong>backbeat</strong>. This is the most important
+        rhythmic pattern in popular music: nearly every rock, pop, soul, and hip-hop song you've
+        ever heard puts the snare on 2 and 4. The kick gives you "ONE-two-THREE-four" and the snare
+        gives you "one-TWO-three-FOUR", and together they fill every beat. That tension between the
+        down-feel and the up-feel is what makes you nod your head.
+      </p>
       <StrudelEditor code={`sound("bd ~ bd ~, ~ sd ~ sd")`} />
 
       <p>
         Finally a hi-hat on every 8th note. <code>hh*8</code> fires eight hats across the cycle,
-        which works out to two per beat.
+        which works out to two per beat. The hat doubles the pulse, halving the perceived time unit
+        — it's what makes the groove feel like it's moving forward instead of plodding. 8th-note hat
+        is the default in dance, pop, and most rock. 16th-note hat (<code>hh*16</code>) feels busier
+        and more "trap" / "drill". Quarter-note hat (<code>hh*4</code>) feels slow and deliberate.
       </p>
       <StrudelEditor code={`sound("bd ~ bd ~, ~ sd ~ sd, hh*8")`} />
 
