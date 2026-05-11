@@ -1,10 +1,11 @@
 import type { Track, TrackStage } from './types';
 import { weWillRockYou } from './we-will-rock-you';
 import { billieJean } from './billie-jean';
+import { sevenNationArmy } from './seven-nation-army';
 
 export type { Track, TrackStage } from './types';
 
-export const tracks: Track[] = [weWillRockYou, billieJean];
+export const tracks: Track[] = [weWillRockYou, billieJean, sevenNationArmy];
 
 export function findTrack(id: string): Track | undefined {
   return tracks.find((t) => t.id === id);
