@@ -5,6 +5,7 @@ import { sevenNationArmy } from './seven-nation-army';
 import { standByMe } from './stand-by-me';
 import { aroundTheWorld } from './around-the-world';
 import { amenBreak } from './amen-break';
+import { odeToJoy } from './ode-to-joy';
 
 export type { Track, TrackStage } from './types';
 
@@ -12,6 +13,7 @@ export const tracks: Track[] = [
   weWillRockYou,
   billieJean,
   sevenNationArmy,
+  odeToJoy,
   standByMe,
   aroundTheWorld,
   amenBreak,

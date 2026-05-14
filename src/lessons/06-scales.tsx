@@ -1,6 +1,11 @@
 import { StrudelEditor } from '../components/StrudelEditor';
 import { QuizEditor } from '../components/QuizEditor';
+import { SongCard } from '../components/SongCard';
+import { odeToJoy } from '../tracks/ode-to-joy';
+import { requireStage } from '../tracks';
 import type { LessonMeta } from './index';
+
+const odeToJoyMelody = requireStage(odeToJoy, 'melody');
 
 export const meta: LessonMeta = {
   slug: 'scales',
@@ -43,23 +48,39 @@ export function Lesson() {
         The real magic: leave the degree numbers alone, swap the scale, and the same melody comes
         out in a different mood.
       </p>
+
+      <SongCard track={odeToJoy} />
+
       <p>
-        Beethoven's <em>Ode to Joy</em> opens with the degrees{' '}
-        <code>2 2 3 4 4 3 2 1 0 0 1 2 2 1 1</code>. In C major those notes are E E F G G F E D C C D
-        E E D D — the famous melody.
+        Beethoven finished his 9th Symphony in 1824, by which point he was completely deaf — he had
+        to be turned around at the premiere to see the audience applauding. The 4th movement
+        introduces a melody so good it later became the official anthem of the European Union. The
+        whole theme uses only <strong>five different notes</strong>: scale degrees 0 through 4.
       </p>
-      <StrudelEditor
-        code={`setcpm(60)
-n("2 2 3 4 4 3 2 1 0 0 1 2 2 1 1").scale("C:major").s("piano")`}
-      />
+      <p>
+        The full 4-bar phrase in scale degrees is <code>2 2 3 4 | 4 3 2 1 | 0 0 1 2 | 2 1 1</code>.
+        In C major: E E F G | G F E D | C C D E | E D D. Bars 1-3 are straight quarter notes, but
+        bar 4 has the signature rhythmic kink: a dotted-quarter, then an eighth note, then a half
+        note. That hitch is what makes the melody sound like Ode to Joy and not a scale exercise.
+      </p>
+      <StrudelEditor code={odeToJoyMelody.code} />
+      <p className="text-sm text-neutral-500">
+        We've used three Strudel tricks here. <code>[a b c d]</code> groups four notes into one
+        bar's worth of time. The four bracketed groups give us 4 bars per cycle. Inside bar 4,{' '}
+        <code>2@3</code> means "hold this note for 3 units" (a dotted quarter), and <code>1@4</code>{' '}
+        holds for 4 units (a half note). <code>setcpm(80/16)</code> matches Beethoven's original
+        metronome marking of ♩=80 with 16 beats per cycle.
+      </p>
 
       <p>
         Now change <code>"C:major"</code> to <code>"A:minor"</code>. Exact same number pattern,
         completely different feel — wistful instead of joyful.
       </p>
       <StrudelEditor
-        code={`setcpm(60)
-n("2 2 3 4 4 3 2 1 0 0 1 2 2 1 1").scale("A:minor").s("piano")`}
+        code={`setcpm(80/16)
+n("[2 2 3 4] [4 3 2 1] [0 0 1 2] [2@3 1 1@4]")
+  .scale("A:minor")
+  .s("piano")`}
       />
 
       <p>
@@ -67,8 +88,10 @@ n("2 2 3 4 4 3 2 1 0 0 1 2 2 1 1").scale("A:minor").s("piano")`}
         <code>"E:mixolydian"</code> for a bluesy/folk vibe.
       </p>
       <StrudelEditor
-        code={`setcpm(60)
-n("2 2 3 4 4 3 2 1 0 0 1 2 2 1 1").scale("D:dorian").s("piano")`}
+        code={`setcpm(80/16)
+n("[2 2 3 4] [4 3 2 1] [0 0 1 2] [2@3 1 1@4]")
+  .scale("D:dorian")
+  .s("piano")`}
       />
 
       <h2 className="text-lg font-semibold text-neutral-100">Why do scales sound different?</h2>
@@ -128,10 +151,14 @@ n("2 2 3 4 4 3 2 1 0 0 1 2 2 1 1").scale("D:dorian").s("piano")`}
           pattern; just change the scale.
         </p>
         <QuizEditor
-          initialCode={`setcpm(60)
-n("2 2 3 4 4 3 2 1 0 0 1 2 2 1 1").scale("C:major").s("piano")`}
-          target={`setcpm(60)
-n("2 2 3 4 4 3 2 1 0 0 1 2 2 1 1").scale("F#:minor").s("piano")`}
+          initialCode={`setcpm(80/16)
+n("[2 2 3 4] [4 3 2 1] [0 0 1 2] [2@3 1 1@4]")
+  .scale("C:major")
+  .s("piano")`}
+          target={`setcpm(80/16)
+n("[2 2 3 4] [4 3 2 1] [0 0 1 2] [2@3 1 1@4]")
+  .scale("F#:minor")
+  .s("piano")`}
           hint={`Replace "C:major" with "F#:minor".`}
         />
       </section>
