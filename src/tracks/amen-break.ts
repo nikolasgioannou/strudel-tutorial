@@ -27,9 +27,11 @@ export const amenBreak: Track = {
       id: 'straight',
       label: 'The break (looped)',
       lesson: 'sample-chopping',
+      // The break is 4 bars long, so 1 cycle = 4 bars (130/16, not 130/4)
+      // — otherwise .fit() compresses the whole break into a single bar.
       description: 'The Amen break sample, looped at its original tempo via .fit().',
-      code: `samples('github:tidalcycles/dirt-samples')
-setcpm(130/4)
+      code: `samples('github:yaxu/clean-breaks')
+setcpm(130/16)
 s("amen").fit()`,
     },
     {
@@ -37,18 +39,25 @@ s("amen").fit()`,
       label: 'Chopped (16 slices)',
       lesson: 'sample-chopping',
       description: 'The same break chopped into 16 even slices played in order.',
-      code: `samples('github:tidalcycles/dirt-samples')
-setcpm(130/4)
+      code: `samples('github:yaxu/clean-breaks')
+setcpm(130/16)
 s("amen").fit().chop(16)`,
     },
     {
       id: 'remixed',
       label: 'Reordered slices',
       lesson: 'sample-chopping',
-      description: 'Slice into 8 chunks, play them in a remixed order — classic jungle move.',
-      code: `samples('github:tidalcycles/dirt-samples')
-setcpm(165/4)
-s("amen").fit().slice(8, "<0 1 2 3 4 5 6 7> <0 1 2 3 4*2 5 [6 7]>").cut(1)`,
+      description: 'Splice into 8 chunks (speed-matched), alternate in-order and remixed.',
+      // .splice() (not .slice()) — same chopping idea, but each slice is
+      // speed-stretched to fill its event slot. Without this you get
+      // tiny gaps between slices whenever the sample's exact duration
+      // doesn't perfectly equal cycle/N. Single outer <> picks one of
+      // two 8-event sub-patterns each cycle.
+      code: `samples('github:yaxu/clean-breaks')
+setcpm(130/16)
+s("amen")
+  .splice(8, "<[0 1 2 3 4 5 6 7] [0 1 2 3 4*2 5 [6 7]]>")
+  .cut(1)`,
     },
   ],
 };
