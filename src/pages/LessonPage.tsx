@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useParams, Link } from 'react-router';
 import { findLesson, lessons } from '../lessons';
 import { NotFound } from './NotFound';
@@ -9,6 +10,12 @@ import { NotFound } from './NotFound';
 export function LessonPage() {
   const { slug } = useParams<{ slug: string }>();
   const lesson = slug ? findLesson(slug) : undefined;
+
+  // Reset scroll on lesson change — otherwise navigating from the prev/next
+  // footer links lands you at the bottom of the new page (where the buttons are).
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [slug]);
 
   if (!lesson) return <NotFound />;
 
