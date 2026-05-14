@@ -34,8 +34,8 @@ export const sweetDreams: Track = {
   stages: [
     {
       id: 'bass-riff',
-      label: 'Bass riff alone',
-      lesson: 'sweet-dreams',
+      label: 'The bass riff',
+      lesson: 'sweet-dreams-bass',
       description: 'The 16-eighth-note synth bass riff that drives the song.',
       // 16 eighth notes over 2 bars at 126 BPM, in C minor.
       // Bar 1 (Cm): C C C C Eb Eb C C
@@ -50,7 +50,7 @@ note("c2 c2 c2 c2 eb2 eb2 c2 c2 ab1 ab1 ab1 c2 g1 g1 g1 c2")
     {
       id: 'drums',
       label: 'Drums alone',
-      lesson: 'sweet-dreams',
+      lesson: 'sweet-dreams-bass',
       description: 'LinnDrum-style 4-on-floor with backbeat and 8th-note hats.',
       code: `setcpm(126/8)
 stack(
@@ -62,7 +62,7 @@ stack(
     {
       id: 'verse',
       label: 'Verse (bass + drums + pad)',
-      lesson: 'sweet-dreams',
+      lesson: 'sweet-dreams-full',
       description: 'Full verse texture — bass riff, drums, sustained chord pad.',
       // Chord weights: chord 1 = 1 bar (half the 2-bar cycle), chords 2+3
       // each get half a bar. Explicit [note,note,note] stacks instead of
@@ -86,7 +86,7 @@ stack(
     {
       id: 'bridge',
       label: 'Bridge variation',
-      lesson: 'sweet-dreams',
+      lesson: 'sweet-dreams-full',
       description: 'The contrasting 2-bar bridge — Cm | F instead of Cm | Ab Gm.',
       code: `setcpm(126/8)
 stack(
@@ -105,7 +105,7 @@ stack(
     {
       id: 'full',
       label: 'Full arrangement',
-      lesson: 'sweet-dreams',
+      lesson: 'sweet-dreams-full',
       description: 'Verse → bridge → verse using arrange() to sequence sections.',
       // arrange() takes [cycles, pattern] pairs and plays them sequentially.
       // Drums and hats run throughout; the bass and chords change per section.

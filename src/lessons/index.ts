@@ -1,21 +1,24 @@
 import type { FC } from 'react';
-import * as lesson01 from './01-first-sounds';
-import * as lesson02 from './02-we-will-rock-you';
-import * as lesson03 from './03-subdividing-time';
-import * as lesson04 from './04-billie-jean';
-import * as lesson05 from './05-seven-nation-army';
-import * as lesson06 from './06-scales';
-import * as lesson07 from './07-billie-jean-bass';
-import * as lesson08 from './08-note-durations';
-import * as lesson09 from './09-filters-and-envelopes';
-import * as lesson10 from './10-pattern-transforms';
-import * as lesson11 from './11-chords-stand-by-me';
-import * as lesson12 from './12-every-and-off';
-import * as lesson13 from './13-signals-and-modulation';
-import * as lesson14 from './14-probability';
-import * as lesson15 from './15-reverb-and-delay';
-import * as lesson16 from './16-sample-chopping';
-import * as lesson17 from './17-full-song-sweet-dreams';
+// Song-centric curriculum: every lesson is anchored to a real song,
+// concepts taught through real examples, songs revisited as we add layers.
+import * as lesson01 from './01-we-will-rock-you-drums';
+import * as lesson02 from './02-billie-jean-drums';
+import * as lesson03 from './03-sunday-bloody-sunday';
+import * as lesson04 from './04-seven-nation-army';
+import * as lesson05 from './05-we-will-rock-you-solo';
+import * as lesson06 from './06-smoke-on-the-water';
+import * as lesson07 from './07-ode-to-joy';
+import * as lesson08 from './08-tetris';
+import * as lesson09 from './09-stand-by-me';
+import * as lesson10 from './10-billie-jean-full';
+import * as lesson11 from './11-take-on-me';
+import * as lesson12 from './12-around-the-world';
+import * as lesson13 from './13-sweet-dreams-bass';
+import * as lesson14 from './14-in-the-air-tonight';
+import * as lesson15 from './15-mario-theme';
+import * as lesson16 from './16-billie-jean-humanized';
+import * as lesson17 from './17-amen-break';
+import * as lesson18 from './18-sweet-dreams-full';
 
 /** Metadata that every lesson exports alongside its component. */
 export interface LessonMeta {
@@ -52,6 +55,7 @@ export const lessons: Lesson[] = [
   { ...lesson15.meta, Component: lesson15.Lesson },
   { ...lesson16.meta, Component: lesson16.Lesson },
   { ...lesson17.meta, Component: lesson17.Lesson },
+  { ...lesson18.meta, Component: lesson18.Lesson },
 ];
 
 export function findLesson(slug: string): Lesson | undefined {

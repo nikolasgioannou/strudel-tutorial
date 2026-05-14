@@ -21,7 +21,7 @@ export const standByMe: Track = {
     {
       id: 'chords',
       label: 'Chords',
-      lesson: 'chords-stand-by-me',
+      lesson: 'stand-by-me',
       description: 'The four-chord progression on piano — A, F#m, D, E.',
       code: `setcpm(120/4)
 chord("<A F#m D E>").voicing().s("piano")`,
@@ -29,7 +29,7 @@ chord("<A F#m D E>").voicing().s("piano")`,
     {
       id: 'with-bass',
       label: '+ Bass',
-      lesson: 'chords-stand-by-me',
+      lesson: 'stand-by-me',
       description: 'Add the root note of each chord on bass.',
       // rootNotes(2) extracts the root pitch from each chord symbol in octave 2.
       code: `setcpm(120/4)

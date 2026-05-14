@@ -32,7 +32,7 @@ export const aroundTheWorld: Track = {
     {
       id: 'bass-with-sweep',
       label: 'Bass + filter sweep',
-      lesson: 'signals-and-modulation',
+      lesson: 'around-the-world',
       description:
         'The 4-bar Around the World bassline with a slow sine-wave filter sweep — the auto-wah signature.',
       code: `setcpm(121/16)

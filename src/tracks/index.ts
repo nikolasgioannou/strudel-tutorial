@@ -7,16 +7,28 @@ import { aroundTheWorld } from './around-the-world';
 import { amenBreak } from './amen-break';
 import { odeToJoy } from './ode-to-joy';
 import { sweetDreams } from './sweet-dreams';
+import { sundayBloodySunday } from './sunday-bloody-sunday';
+import { smokeOnTheWater } from './smoke-on-the-water';
+import { tetris } from './tetris';
+import { takeOnMe } from './take-on-me';
+import { inTheAirTonight } from './in-the-air-tonight';
+import { marioTheme } from './mario-theme';
 
 export type { Track, TrackStage } from './types';
 
 export const tracks: Track[] = [
   weWillRockYou,
   billieJean,
+  sundayBloodySunday,
   sevenNationArmy,
+  smokeOnTheWater,
   odeToJoy,
+  tetris,
   standByMe,
+  takeOnMe,
   aroundTheWorld,
+  inTheAirTonight,
+  marioTheme,
   amenBreak,
   sweetDreams,
 ];

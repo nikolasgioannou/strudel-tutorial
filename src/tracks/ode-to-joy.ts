@@ -35,7 +35,7 @@ export const odeToJoy: Track = {
     {
       id: 'melody',
       label: 'The melody (C major)',
-      lesson: 'scales',
+      lesson: 'ode-to-joy',
       description: 'The opening 4-bar phrase, scale-degree pattern with correct rhythm.',
       // 4 bracketed groups = 4 bars per cycle. Inside bar 4, @N elongates
       // the note: weights 3+1+4 = 8 eighth-note units = dotted-quarter,
