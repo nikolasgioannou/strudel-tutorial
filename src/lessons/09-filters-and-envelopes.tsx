@@ -96,11 +96,13 @@ export function Lesson() {
   .attack(0).decay(.1).sustain(0).release(.1)`}
       />
       <p>
-        <strong>Stab</strong> — same idea but with a longer release so the notes ring out:
+        <strong>Stab</strong> — punchy hit but with a held tail so the notes ring out instead of
+        dying instantly. The trick: <code>sustain</code> has to be above zero, otherwise there's
+        nothing left for the release to fade out from.
       </p>
       <StrudelEditor
         code={`note("c3 e3 g3 c4").s("sawtooth").lpf(2000)
-  .attack(0).decay(.05).sustain(0).release(.6)`}
+  .attack(0).decay(.1).sustain(.5).release(.6)`}
       />
       <p>
         <strong>Pad</strong> — slow attack, full sustain, long release. Notes swell in and out:
