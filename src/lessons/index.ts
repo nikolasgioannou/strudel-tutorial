@@ -15,6 +15,7 @@ import * as lesson13 from './13-signals-and-modulation';
 import * as lesson14 from './14-probability';
 import * as lesson15 from './15-reverb-and-delay';
 import * as lesson16 from './16-sample-chopping';
+import * as lesson17 from './17-full-song-sweet-dreams';
 
 /** Metadata that every lesson exports alongside its component. */
 export interface LessonMeta {
@@ -50,6 +51,7 @@ export const lessons: Lesson[] = [
   { ...lesson14.meta, Component: lesson14.Lesson },
   { ...lesson15.meta, Component: lesson15.Lesson },
   { ...lesson16.meta, Component: lesson16.Lesson },
+  { ...lesson17.meta, Component: lesson17.Lesson },
 ];
 
 export function findLesson(slug: string): Lesson | undefined {

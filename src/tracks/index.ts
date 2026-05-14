@@ -6,6 +6,7 @@ import { standByMe } from './stand-by-me';
 import { aroundTheWorld } from './around-the-world';
 import { amenBreak } from './amen-break';
 import { odeToJoy } from './ode-to-joy';
+import { sweetDreams } from './sweet-dreams';
 
 export type { Track, TrackStage } from './types';
 
@@ -17,6 +18,7 @@ export const tracks: Track[] = [
   standByMe,
   aroundTheWorld,
   amenBreak,
+  sweetDreams,
 ];
 
 export function findTrack(id: string): Track | undefined {
