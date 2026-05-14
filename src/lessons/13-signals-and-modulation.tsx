@@ -85,25 +85,28 @@ export function Lesson() {
 
       <h2 className="text-lg font-semibold text-neutral-100">Around the World</h2>
       <p>
-        Daft Punk's <em>Around the World</em> is the patron saint of filter sweeps. A simple
-        bassline (an ascending E-minor pattern, climbing up and walking back down) plays for seven
-        minutes straight — but the filter on it is <em>constantly</em> opening and closing. Same
-        notes, but the sound is always evolving. That's the whole song.
+        Daft Punk's <em>Around the World</em> is the patron saint of filter sweeps. A 4-bar bassline
+        — three "ascending stairs" of repeated notes, then a quick descent — plays for seven minutes
+        straight. The filter on it is <em>constantly</em> opening and closing. Same notes, but the
+        sound is always evolving. That's the whole song.
       </p>
 
       <SongCard track={aroundTheWorld} />
 
       <p>
-        Our simplified bassline first, with no filter movement — just a sawtooth synth playing an
-        ascending/descending E-minor scale:
+        Our bassline first, with no filter movement — just a sawtooth synth running the 4-bar
+        pattern. Each "stair" hits the same note three times before stepping up; the last bar drops
+        back down quickly:
       </p>
       <StrudelEditor
-        code={`setcpm(121/4)
-note("a1 b1 c2 d2 e2 f#2 e2 d2").s("sawtooth")`}
+        code={`setcpm(121/16)
+note("[~ a1 a1 [a1 ~ b1 c2]] [~ c2 c2 [c2 ~ d2 e2]] [~ e2 e2 e2] [[b2 a2] [g2 f#2] [e2 d2] [g1 ~ ~ d2]]")
+  .s("sawtooth")`}
       />
       <p>
         Same notes, but now wrap the cutoff in a slow sine. Watch (and listen) as the brightness
-        moves up and down across 8 cycles:
+        moves up and down — the sine takes 2 full cycles (8 bars, ~16 seconds) to swing from dark to
+        bright and back:
       </p>
       <StrudelEditor code={sweepStage.code} />
       <p className="text-sm text-neutral-500">
@@ -116,16 +119,17 @@ note("a1 b1 c2 d2 e2 f#2 e2 d2").s("sawtooth")`}
         <h3 className="text-sm font-medium tracking-wider text-brand-300 uppercase">Quiz</h3>
         <p className="text-sm">
           Take the Around the World bassline and make the filter sweep{' '}
-          <strong>twice as fast</strong> — sweep over 4 cycles instead of 8.
+          <strong>twice as fast</strong> — sweep over 1 cycle instead of 2.
         </p>
         <QuizEditor
           initialCode={sweepStage.code}
-          target={`setcpm(121/4)
-note("a1 b1 c2 d2 e2 f#2 e2 d2").s("sawtooth")
-  .lpf(sine.range(200, 3000).slow(4))
+          target={`setcpm(121/16)
+note("[~ a1 a1 [a1 ~ b1 c2]] [~ c2 c2 [c2 ~ d2 e2]] [~ e2 e2 e2] [[b2 a2] [g2 f#2] [e2 d2] [g1 ~ ~ d2]]")
+  .s("sawtooth")
+  .lpf(sine.range(200, 3000).slow(1))
   .lpq(8)
   .attack(0).decay(.15).sustain(0)`}
-          hint="Change slow(8) to slow(4)."
+          hint="Change slow(2) to slow(1)."
         />
       </section>
 
