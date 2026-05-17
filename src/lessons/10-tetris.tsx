@@ -10,7 +10,7 @@ export const meta: LessonMeta = {
   title: 'A full melody — Tetris',
   blurb:
     'Korobeiniki, the 1861 folk tune that became video-game canon. Longer phrases, alternation.',
-  order: 8,
+  order: 10,
 };
 
 const aSection = requireStage(tetris, 'a-section');
@@ -47,9 +47,10 @@ export function Lesson() {
         minor scale. That&apos;s why it&apos;s so singable.
       </p>
       <p className="text-sm text-neutral-500">
-        <code>setcpm(124/16)</code> — one cycle = 4 bars at 124 BPM. We have done this math before;
-        the formula <code>setcpm(BPM / beats_per_cycle)</code> works for any cycle length. 16 beats
-        per cycle = 4 bars in 4/4.
+        <code>setcpm(150/16)</code> — one cycle = 4 bars at 150 BPM (the Game Boy speed; piano
+        tutorials usually slow it to ~120-125 for playability). The formula{' '}
+        <code>setcpm(BPM / beats_per_cycle)</code> works for any cycle length. 16 beats per cycle =
+        4 bars in 4/4.
       </p>
 
       <h2 className="text-lg font-semibold text-neutral-100">

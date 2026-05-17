@@ -9,7 +9,7 @@ export const meta: LessonMeta = {
   slug: 'amen-break',
   title: 'Sample chopping — the Amen Break',
   blurb: 'The seven seconds of drums that built jungle, drum-and-bass, and half of hip-hop.',
-  order: 17,
+  order: 19,
 };
 
 const straight = requireStage(amenBreak, 'straight');

@@ -20,12 +20,18 @@ export const tetris: Track = {
   year: 1989,
   // Original Game Boy 8-bit recording — fan extension.
   youtubeId: 'NmCCQxVBfyM',
-  tempo: 124,
+  // Game Boy original runs at ~150 BPM (speeds up to ~225 BPM as the stack
+  // gets tall). Piano tutorials often slow it to ~120-125 for playability;
+  // we use 150 to match the actual Game Boy speed.
+  tempo: 150,
   // The famous A-section is 4 bars; we'll fit it in one cycle.
   beatsPerCycle: 16,
-  key: 'A minor',
+  // The Game Boy chiptune actually sounds in E minor; piano transcriptions
+  // are conventionally written in A minor for readability — we use A minor
+  // here for the same reason.
+  key: 'A minor (Game Boy chiptune is E minor; A minor is the conventional piano key)',
   notes:
-    'The Game Boy "Type A" theme. Almost entirely stepwise motion through the A minor scale (A B C D E F G). Mostly 8th notes; bar 4 hits a held A.',
+    'The Game Boy "Type A" theme. Almost entirely stepwise motion through the A minor scale (A B C D E F G). Mostly 8th notes; bar 3 hits held A notes.',
   stages: [
     {
       id: 'a-section',

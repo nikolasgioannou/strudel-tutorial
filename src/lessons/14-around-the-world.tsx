@@ -9,7 +9,7 @@ export const meta: LessonMeta = {
   slug: 'around-the-world',
   title: 'Signals — Around the World',
   blurb: "Daft Punk's filter sweep. Parameters that move on their own.",
-  order: 12,
+  order: 14,
 };
 
 const sweepStage = requireStage(aroundTheWorld, 'bass-with-sweep');

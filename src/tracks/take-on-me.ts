@@ -12,7 +12,7 @@ import type { Track } from './types';
  *
  * Source: Ultimate Guitar / Songsterr intro tab. Tempo ~169 BPM per
  * multiple BPM databases. Key of A major overall (per Hooktheory chord
- * analysis: chorus is A, E/G#, F#m, D = I-V-vi-IV in A).
+ * analysis: chorus is A - C#m7/G# - F#m - D = I - iii/3 - vi - IV in A).
  */
 export const takeOnMe: Track = {
   id: 'take-on-me',

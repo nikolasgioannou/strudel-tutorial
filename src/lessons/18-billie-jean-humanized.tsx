@@ -10,7 +10,7 @@ export const meta: LessonMeta = {
   slug: 'billie-jean-humanized',
   title: 'Probability — Billie Jean returns again',
   blurb: 'sometimes, often, rarely. Make a static groove feel like a human is playing it.',
-  order: 16,
+  order: 18,
 };
 
 const humanized = requireStage(billieJean, 'humanized');

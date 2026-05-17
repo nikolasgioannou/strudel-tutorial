@@ -3,19 +3,23 @@ import type { Track } from './types';
 /**
  * Eurythmics — Sweet Dreams (Are Made of This) (1983). Annie Lennox + Dave
  * Stewart, recorded in an 8-track upstairs studio after Stewart's previous
- * band fell apart. The whole arrangement is built from a LinnDrum machine,
- * a pair of synths (Oberheim OB-X or Juno-60 + SH-09, debated) playing the
- * iconic bass riff panned hard left and right, and Lennox's vocal. Simple,
- * hypnotic, perfect for learning sequenced electronic music.
+ * band fell apart. The drum machine is the rare Movement Systems MCS Drum
+ * Computer (a ~30-unit British prototype), NOT a LinnDrum. The bass is
+ * sequenced from a Roland SH-101 via the Movement; an Oberheim OB-X
+ * provides the sustained string pad. Lennox's vocal carries the melody.
  *
- * Stewart on the writing process: "I suggested there had to be another
- * section, and that section should be positive — so in the middle we added
- * chord changes rising upwards with 'Hold your head up, moving on.' The
- * whole song is a chorus, there is not one note that is not a hook."
+ * Stewart paraphrased the writing process in interviews — he wanted a
+ * contrasting middle section that felt positive ("hold your head up,
+ * moving on") to lift the song's predominantly minor mood.
  *
- * The track is one of the cleanest examples in pop of repetition + layering
- * doing all the work. Two bars of chord changes, looped for almost the
- * entire song, with a contrasting 2-bar bridge.
+ * The track is one of the cleanest examples in pop of repetition +
+ * layering doing all the work. Two bars of chord changes, looped for
+ * almost the entire song, with a contrasting 2-bar bridge.
+ *
+ * Note: Strudel doesn't ship the Movement MCS samples, so we use LinnDrum
+ * in the code below — close in vibe but historically wrong. Treat
+ * LinnDrum here as a "best available approximation," not historical
+ * accuracy.
  */
 export const sweetDreams: Track = {
   id: 'sweet-dreams',
@@ -28,9 +32,10 @@ export const sweetDreams: Track = {
   beatsPerCycle: 8,
   key: 'C minor',
   notes:
-    'Iconic 2-bar pattern: Cm | Ab Gm. Bridge: Cm | F. The bass synth ' +
-    'plays a 16-eighth-note riff (C-Eb-C / Ab-C-G-C) that anchors the whole song. ' +
-    'Drums are a classic 80s 4-on-the-floor with backbeat snare and 8th-note hats.',
+    'Iconic 2-bar pattern: Cm | Ab Gm. Bridge: Cm | F. A Roland SH-101 sequenced by ' +
+    'the rare Movement MCS Drum Computer plays the 16-eighth-note bass riff (C-Eb-C / ' +
+    'Ab-C-G-C) that anchors the song. The MCS also handles drums — a 4-on-the-floor ' +
+    'kick with backbeat snare and 8th-note hats. We approximate the MCS with LinnDrum.',
   stages: [
     {
       id: 'bass-riff',

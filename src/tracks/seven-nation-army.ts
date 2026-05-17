@@ -35,19 +35,24 @@ note("e2 e2 g2 e2 d2 c2 b1 ~").s("gm_acoustic_bass")`,
     {
       id: 'riff-with-rhythm',
       label: 'The riff (real rhythm)',
-      lesson: 'we-will-rock-you-solo',
+      lesson: 'seven-nation-army-rhythm',
       description:
-        'Quarter E, 8th rest, 8th E, dotted-8th G, dotted-8th E, 8th D, then a full bar each of held C and held B.',
+        'Dotted-quarter E (held), 16th E, dotted-8th G, dotted-8th E, dotted-8th D, then a full bar each of held C and held B.',
       // 32 16th-note units per cycle (1 cycle = 2 bars at 124 BPM, setcpm(124/8)).
-      // Bar 1: e2@4 ~@2 e2@2 g2@3 e2@3 d2@2  →  4+2+2+3+3+2 = 16  ✓
-      // Bar 2: c2@8 b1@8  →  8+8 = 16  ✓
+      // Per Wikipedia / sheet-music transcriptions, bar 1 is:
+      //   dotted-quarter E (6 sixteenths, held)
+      //   16th E (1 sixteenth)
+      //   dotted-8th G (3 sixteenths)
+      //   dotted-8th E (3 sixteenths)
+      //   dotted-8th D (3 sixteenths)  →  total 6+1+3+3+3 = 16 ✓
+      // Bar 2: c2 half, b1 half = 8+8 = 16
       code: `setcpm(124/8)
-note("e2@4 ~@2 e2@2 g2@3 e2@3 d2@2 c2@8 b1@8").s("gm_acoustic_bass")`,
+note("e2@6 e2@1 g2@3 e2@3 d2@3 c2@8 b1@8").s("gm_acoustic_bass")`,
     },
     {
       id: 'riff-as-scale-degrees',
       label: 'The riff in scale degrees',
-      lesson: 'ode-to-joy',
+      lesson: 'seven-nation-army-scales',
       description: 'Same riff written in E minor scale degrees — n().scale() instead of note().',
       // E minor scale: E F# G A B C D (degrees 0-6). E=0, G=2, D=-1 (below octave),
       // C=-2, B=-3. Matches the original note sequence.

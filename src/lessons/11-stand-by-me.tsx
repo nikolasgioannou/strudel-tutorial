@@ -9,7 +9,7 @@ export const meta: LessonMeta = {
   slug: 'stand-by-me',
   title: 'Chord progressions — Stand By Me',
   blurb: 'The four chords that built half of pop music. I-vi-IV-V, the 50s progression.',
-  order: 9,
+  order: 11,
 };
 
 const chordsStage = requireStage(standByMe, 'chords');

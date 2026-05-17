@@ -9,7 +9,7 @@ export const meta: LessonMeta = {
   slug: 'mario-theme',
   title: 'Pattern transforms — Mario',
   blurb: 'rev, jux, every, fast, slow. Take a melody and warp it without rewriting the notes.',
-  order: 15,
+  order: 17,
 };
 
 const opening = requireStage(marioTheme, 'opening');
@@ -34,14 +34,15 @@ export function Lesson() {
 
       <h2 className="text-lg font-semibold text-neutral-100">The melody</h2>
       <p>
-        Mario lives in C major at 100 BPM. The opening phrase has the famous octave drop at the end
-        — high G5, then a beat later, low G4 (an octave below). That drop is the song&apos;s
-        signature:
+        Mario lives in C major at 100 BPM. The famous 2-bar opening: a quick triple-E figure with a
+        C in the middle, then a high G5 that waits a beat before dropping an octave to G4. That
+        octave drop is the song&apos;s signature.
       </p>
       <StrudelEditor code={opening.code} />
       <p className="text-sm text-neutral-500">
-        The actual recording uses NES pulse-wave channels and has swing. We&apos;ve simplified to
-        straight 16ths and a basic <code>square</code> wave for clarity. The notes are right.
+        The actual NES recording uses two pulse-wave channels for melody/harmony, a triangle channel
+        for bass, and a noise channel for percussion. The percussion has swing but the melodic
+        pulses are straight. We&apos;re simplifying to one square wave for clarity.
       </p>
 
       <h2 className="text-lg font-semibold text-neutral-100">

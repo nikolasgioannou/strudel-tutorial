@@ -4,8 +4,8 @@ import type { Track } from './types';
  * Beethoven — Symphony No. 9, 4th movement, "Ode to Joy" theme (1824).
  * The most-famous melody in classical music: 4 bars, only 5 different
  * notes (scale degrees 0-4 of D major in the original). Beethoven was
- * completely deaf by the premiere and reportedly had to be turned around
- * to see the audience applauding. Now it's the official anthem of the EU.
+ * almost completely deaf by the premiere and reportedly had to be turned
+ * around to see the audience applauding. Now it's the official anthem of the EU.
  *
  * The lesson presents it in C major so the degrees-to-note mapping is the
  * obvious one (C D E F G = 0 1 2 3 4). Original key was D major; the EU

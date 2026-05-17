@@ -1,9 +1,7 @@
 import { StrudelEditor } from '../components/StrudelEditor';
 import { TryThis } from '../components/TryThis';
 import { SongCard } from '../components/SongCard';
-import { SongJourney } from '../components/SongJourney';
 import { odeToJoy } from '../tracks/ode-to-joy';
-import { sevenNationArmy } from '../tracks/seven-nation-army';
 import { requireStage } from '../tracks';
 import type { LessonMeta } from './index';
 
@@ -11,11 +9,10 @@ export const meta: LessonMeta = {
   slug: 'ode-to-joy',
   title: 'Scales — Ode to Joy',
   blurb: 'Stop naming every note. Pick a scale and use degree numbers instead.',
-  order: 7,
+  order: 8,
 };
 
 const melodyStage = requireStage(odeToJoy, 'melody');
-const snaAsDegrees = requireStage(sevenNationArmy, 'riff-as-scale-degrees');
 
 export function Lesson() {
   return (
@@ -29,8 +26,8 @@ export function Lesson() {
       </p>
       <p>
         This is the most-recognizable melody in classical music — Beethoven&apos;s{' '}
-        <em>Ode to Joy</em>, written in 1824 while he was completely deaf. Five notes. Four bars.
-        Two centuries of life. Let&apos;s see how few characters it takes to play.
+        <em>Ode to Joy</em>, written in 1824 while he was almost completely deaf. Five notes. Four
+        bars. Two centuries of life. Let&apos;s see how few characters it takes to play.
       </p>
 
       <SongCard track={odeToJoy} />
@@ -79,29 +76,12 @@ export function Lesson() {
         Beethoven&apos;s melody uses only degrees 0 through 4 (the first 5 notes of the scale). The
         full 4-bar phrase is <code>2 2 3 4 | 4 3 2 1 | 0 0 1 2 | 2 1 1</code>. In C major those
         degrees map to E, F, G, D, C. The rhythmic kink in bar 4 (dotted-quarter / eighth / half) is
-        what makes it unmistakable — that&apos;s our friend <code>@N</code> from lesson 5:
+        what makes it unmistakable — that&apos;s our friend <code>@N</code> from earlier lessons:
       </p>
       <StrudelEditor code={melodyStage.code} />
       <p className="text-sm text-neutral-500">
         Now try changing <code>&quot;C:major&quot;</code> to <code>&quot;A:minor&quot;</code>. Same
         numbers, completely different emotional weight — joyful becomes wistful.
-      </p>
-
-      <h2 className="text-lg font-semibold text-neutral-100">Back to Seven Nation Army</h2>
-      <p>
-        Lesson 4 wrote the SNA riff as <code>note(&quot;e2 e2 g2 e2 d2 c2 b1 ~&quot;)</code>. In E
-        minor scale degrees, those notes become <code>0 0 2 0 -1 -2 -3</code> — the negative numbers
-        go below the root:
-      </p>
-      <StrudelEditor code={snaAsDegrees.code} />
-
-      <SongJourney trackId="seven-nation-army" currentLessonSlug={meta.slug} />
-
-      <p>
-        Same audio output, completely different writing. Why bother?{' '}
-        <strong>Because now you can transpose by changing one string.</strong> Change{' '}
-        <code>&quot;E:minor&quot;</code> to <code>&quot;F#:minor&quot;</code> and the entire riff
-        jumps up a half step. Try it.
       </p>
 
       <h2 className="text-lg font-semibold text-neutral-100">Other scales worth knowing</h2>
@@ -132,9 +112,8 @@ export function Lesson() {
       />
 
       <p className="text-sm text-neutral-500">
-        Scale degrees are the bridge from melody-writing to chord-writing. The next lesson stays in
-        scale-degree land but starts playing <em>longer</em> melodies — full song themes instead of
-        short riffs.
+        Scale degrees are the bridge between melody and harmony. Next lesson we apply the same idea
+        to a song we already know — rewriting Seven Nation Army in scale-degree form.
       </p>
     </div>
   );

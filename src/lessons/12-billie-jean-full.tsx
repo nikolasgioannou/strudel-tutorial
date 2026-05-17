@@ -10,7 +10,7 @@ export const meta: LessonMeta = {
   slug: 'billie-jean-full',
   title: 'Layering — Billie Jean returns',
   blurb: 'Drums + bass + chord pad. The full verse texture, three layers deep.',
-  order: 10,
+  order: 12,
 };
 
 const drumsStage = requireStage(billieJean, 'drums');

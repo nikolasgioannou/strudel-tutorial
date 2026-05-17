@@ -1,19 +1,22 @@
 import type { Track } from './types';
 
 /**
- * Deep Purple — Smoke on the Water (1972). Ritchie Blackmore's riff is
- * routinely listed among the most recognizable in rock history. It's
- * played as parallel-4th dyads — each note in the melody has a perfect
- * 4th stacked above on the next string up. The melody itself lives in
- * the G minor blues scale.
+ * Deep Purple — Smoke on the Water (1972). Ritchie Blackmore wrote the
+ * iconic riff (the song is credited to all five band members: Blackmore,
+ * Gillan, Glover, Lord, Paice). It's routinely listed among the most
+ * recognizable in rock history.
  *
- * The riff is a 3-bar phrase (often described as 4 phrases of 3-5 notes
- * each):
- *   Bar 1: G — Bb — C
- *   Bar 2: G — Bb — Db — C
- *   Bar 3: G — Bb — C — Bb — G
+ * The riff is played as parallel-4th dyads — each note in the melody has
+ * a perfect 4th stacked above on the next string up. The melody itself
+ * lives in the G minor blues scale.
  *
- * Tempo: 112 BPM (per multiple BPM databases). 4/4 time, key of G minor.
+ * The rhythm is straightforward — notes land ON the downbeat, with each
+ * note held until the next one. Bar 1 is essentially "quarter, quarter,
+ * half." That on-the-beat simplicity is part of why it's THE first riff
+ * everyone learns on guitar.
+ *
+ * Tempo: 112 BPM (official Deep Purple sheet music marks ♩=112; some BPM
+ * databases report 114). 4/4 time, key of G minor.
  */
 export const smokeOnTheWater: Track = {
   id: 'smoke-on-the-water',
@@ -23,20 +26,21 @@ export const smokeOnTheWater: Track = {
   // Official animated music video released March 2024.
   youtubeId: 'Q2FzZSBD5LE',
   tempo: 112,
-  // The riff is a 3-bar phrase — we'll loop one cycle = 3 bars (= 12 beats).
+  // The riff is a 3-bar phrase — we loop one cycle = 3 bars (= 12 beats).
   beatsPerCycle: 12,
   key: 'G minor',
   notes:
-    'Riff played as parallel-4th dyads on guitar — each melody note gets a perfect 4th stacked above. The melody uses the G minor blues scale (G, Bb, C, Db, D, F).',
+    'Riff played as parallel-4th dyads on guitar — each melody note has a perfect 4th stacked above. Notes land on the beat; the rhythm is simple (quarter, quarter, half pattern in bar 1).',
   stages: [
     {
       id: 'riff-single-notes',
       label: 'The riff (melody only)',
       lesson: 'smoke-on-the-water',
-      description: 'The riff stripped to a single melody line — easiest to see the shape.',
-      // 3 bars per cycle. Bar 1: G@4 Bb@4 C@8 (3 notes, weights 4+4+8=16 16ths).
-      // Bar 2: G@4 Bb@4 Db@2 C@6 (4 notes, 16 16ths).
-      // Bar 3: G@4 Bb@4 C@4 Bb@2 G@2 (5 notes, 16 16ths).
+      description: 'The melody line of the riff — single notes, three bars in G minor.',
+      // 3 bars per cycle, 16 16th-note weights per bar.
+      // Bar 1: G quarter (4) — Bb quarter (4) — C half (8)
+      // Bar 2: G quarter (4) — Bb quarter (4) — Db 8th (2) — C dotted-quarter (6)
+      // Bar 3: G quarter (4) — Bb quarter (4) — C quarter (4) — Bb 8th (2) — G 8th (2)
       code: `setcpm(112/12)
 note(\`[g3@4 bb3@4 c4@8]
       [g3@4 bb3@4 db4@2 c4@6]

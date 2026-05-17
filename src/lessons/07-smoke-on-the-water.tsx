@@ -9,7 +9,7 @@ export const meta: LessonMeta = {
   slug: 'smoke-on-the-water',
   title: 'Power chords — Smoke on the Water',
   blurb: "Two notes stacked. Ritchie Blackmore's parallel-4ths riff, the rock-guitar baptism.",
-  order: 6,
+  order: 7,
 };
 
 const riffSingleNotes = requireStage(smokeOnTheWater, 'riff-single-notes');
@@ -20,9 +20,10 @@ export function Lesson() {
     <div className="space-y-6 text-neutral-300">
       <p>
         If you&apos;ve ever picked up an electric guitar, this is probably the first riff someone
-        showed you. Ritchie Blackmore wrote it in 1971 in Montreux after a casino burned down —
-        &quot;smoke on the water&quot; was literally the air outside their hotel. Now it&apos;s the
-        gateway drug to rock guitar for every kid who hears it.
+        showed you. Ritchie Blackmore wrote the riff in 1971 in Montreux after a casino burned down
+        — &quot;smoke on the water&quot; was literally the air outside their hotel. The song itself
+        is credited to all five Deep Purple members (Blackmore, Gillan, Glover, Lord, Paice). Now
+        the riff is the gateway drug to rock guitar for every kid who hears it.
       </p>
       <p>
         The riff has one twist: Blackmore plays each note as a <strong>dyad</strong> — a stack of
@@ -39,25 +40,33 @@ export function Lesson() {
       </p>
       <ul className="ml-5 list-disc space-y-1 text-sm">
         <li>
-          <strong>Bar 1:</strong> G — Bb — C
+          <strong>Bar 1:</strong> G — Bb — C (held)
         </li>
         <li>
-          <strong>Bar 2:</strong> G — Bb — Db — C
+          <strong>Bar 2:</strong> G — Bb — Db — C (held)
         </li>
         <li>
-          <strong>Bar 3:</strong> G — Bb — C — Bb — G
+          <strong>Bar 3:</strong> G — Bb — C — Bb — G (held)
         </li>
       </ul>
       <p>
-        All five pitches (G, Bb, C, Db, F minus the F here) belong to the G minor blues scale — the
-        scale that powers most rock and blues riffs.
+        All five pitches (G, Bb, C, Db, plus the F-natural that&apos;s implicit in the scale) belong
+        to the G minor blues scale — the scale that powers most rock and blues riffs.
+      </p>
+      <p>
+        Each bar follows the same simple shape: two quarter notes climbing into a longer held note.
+        Bar 1 is quarter-quarter-half; bar 2 adds a quick 8th-note <em>Db</em> as a passing tone
+        before the held C; bar 3 ascends to C then walks back down. Notes are on the beat —
+        that&apos;s why even a 4-year-old can tap along.
       </p>
       <StrudelEditor code={riffSingleNotes.code} />
       <p className="text-sm text-neutral-500">
         We&apos;re using <code>setcpm(112/12)</code> because one full cycle of the riff is{' '}
-        <strong>3 bars</strong> (= 12 beats) at 112 BPM. Each bar inside the cycle uses{' '}
-        <code>[ ]</code> with <code>@N</code> weights to encode the rhythm — long held notes on beat
-        1 of each bar, shorter passing notes leading to the next bar.
+        <strong>3 bars</strong> (= 12 beats) at 112 BPM — the tempo on the official Deep Purple
+        sheet music. Each bar inside the cycle has weights adding to 16 (the 16 16th notes in 4/4).{' '}
+        <code>g3@4</code> is a quarter, <code>c4@8</code> is a half, <code>db4@2</code> is an 8th,{' '}
+        <code>c4@6</code> is a dotted-quarter — read the weights as 16ths and you can read any
+        rhythm.
       </p>
 
       <h2 className="text-lg font-semibold text-neutral-100">

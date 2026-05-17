@@ -8,8 +8,8 @@ import type { LessonMeta } from './index';
 export const meta: LessonMeta = {
   slug: 'in-the-air-tonight',
   title: 'Space — In the Air Tonight',
-  blurb: "Reverb and delay. Phil Collins' atmospheric drum sound, plus THAT fill at 3:16.",
-  order: 14,
+  blurb: "Reverb and delay. Phil Collins' atmospheric drum sound, plus THAT fill at 3:40.",
+  order: 16,
 };
 
 const padStage = requireStage(inTheAirTonight, 'cr78-and-pad');
@@ -30,10 +30,10 @@ export function Lesson() {
       <SongCard track={inTheAirTonight} />
 
       <p>
-        And then, at exactly 3:16, the drum fill arrives. A simple tom roll, made enormous by a
-        signature drum-mic trick (heavily-compressed talkback mic, often misremembered as
-        &quot;gated reverb&quot;). It changed 80s drum production overnight. We&apos;ll build both —
-        the atmospheric front half and the explosion.
+        And then, at <strong>~3:40</strong>, the drum fill arrives. A simple tom roll, made enormous
+        by a signature drum-mic technique — an SSL reverse-talkback mic, heavily compressed, with a
+        noise gate, often summarized as &quot;gated reverb.&quot; It changed 80s drum production
+        overnight. We&apos;ll build both — the atmospheric front half and the explosion.
       </p>
 
       <h2 className="text-lg font-semibold text-neutral-100">
@@ -84,9 +84,10 @@ export function Lesson() {
 
       <h2 className="text-lg font-semibold text-neutral-100">The In the Air Tonight intro</h2>
       <p>
-        The first three minutes are just a CR-78 drum machine, an atmospheric pad, and Phil&apos;s
-        vocal. Sparse and ghostly. We approximate with a similar drum pattern + a slow D-minor pad
-        drenched in reverb and delay:
+        The first three-and-a-half minutes are <em>just</em> a CR-78 drum machine (Disco 2 preset),
+        a Prophet-5 chord pad, and Phil&apos;s vocoded vocal. No live snare, no live hi-hat —
+        that&apos;s the whole point. Sparse and ghostly. We approximate with a similar sparse drum
+        pattern + a slow D minor pad drenched in reverb and delay:
       </p>
       <StrudelEditor code={padStage.code} />
       <p className="text-sm text-neutral-500">
@@ -97,8 +98,8 @@ export function Lesson() {
 
       <h2 className="text-lg font-semibold text-neutral-100">THAT drum fill</h2>
       <p>
-        At 3:16, the live drums hit. Famous for the &quot;gated reverb&quot; sound — technically a
-        heavily compressed mic technique rather than literal gating, but the effect is the same:
+        At ~3:40, the live drums hit. Famous for the &quot;gated reverb&quot; sound — actually a
+        combination of an SSL reverse-talkback mic, heavy compression, AND a noise gate. The effect:
         each drum hit is enormous and then snaps off, like a flash photograph of sound.
       </p>
       <p>

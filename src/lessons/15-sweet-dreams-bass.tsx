@@ -10,7 +10,7 @@ export const meta: LessonMeta = {
   slug: 'sweet-dreams-bass',
   title: 'A signature bass tone — Sweet Dreams',
   blurb: "Eurythmics' iconic synth bass. Square waves, lpq resonance, LinnDrum drums.",
-  order: 13,
+  order: 15,
 };
 
 const bassRiff = requireStage(sweetDreams, 'bass-riff');
@@ -20,10 +20,16 @@ export function Lesson() {
   return (
     <div className="space-y-6 text-neutral-300">
       <p>
-        Annie Lennox and Dave Stewart wrote Sweet Dreams in 1983, recording it in a tiny upstairs
-        studio with a LinnDrum machine and a pair of synths — probably an Oberheim OB-X, possibly a
-        Juno-60 + SH-09 (it&apos;s been debated for forty years). The bass riff is what you remember
-        most. We&apos;ve been chasing that <em>tone</em> for several lessons now; time to nail it.
+        Annie Lennox and Dave Stewart wrote Sweet Dreams in 1983 in a tiny upstairs studio. The
+        sequencing was done on a <strong>Movement Systems MCS Drum Computer</strong> — a rare
+        British prototype, only about 30 units ever built — which drove a Roland SH-101 for the
+        bass. An Oberheim OB-X provided the sustained string pad. The bass riff is what you remember
+        most. We&apos;ll build the tone now.
+      </p>
+      <p className="text-sm text-neutral-500">
+        Strudel doesn&apos;t ship Movement MCS samples — almost no software does. We&apos;ll use the
+        LinnDrum bank as the closest available approximation. Historically inaccurate, sonically in
+        the family.
       </p>
 
       <SongCard track={sweetDreams} />

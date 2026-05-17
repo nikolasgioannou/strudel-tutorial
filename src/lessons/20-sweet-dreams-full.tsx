@@ -10,7 +10,7 @@ export const meta: LessonMeta = {
   slug: 'sweet-dreams-full',
   title: 'A full song — Sweet Dreams returns',
   blurb: 'Verses, bridge, arrange(). Build a complete track with multiple sections.',
-  order: 18,
+  order: 20,
 };
 
 const verseStage = requireStage(sweetDreams, 'verse');

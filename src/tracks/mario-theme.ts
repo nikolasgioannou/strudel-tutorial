@@ -24,19 +24,21 @@ export const marioTheme: Track = {
   // Clean NES soundtrack rip.
   youtubeId: 'iy3qq7zc4EY',
   tempo: 100,
-  // 2-bar opening phrase per cycle.
+  // 2-bar opening phrase per cycle — the iconic part with the octave drop.
   beatsPerCycle: 8,
   key: 'C major',
   notes:
-    'NES pulse-wave melody on top of triangle bass. Swing rhythm. We focus on the opening 2-bar phrase — the part everyone recognizes.',
+    'NES pulse-wave melody on top of triangle bass. The percussion channel has swing, but the melody pulses are straight 8ths/16ths. We capture the famous 2-bar opening with the high-G/low-G octave drop.',
   stages: [
     {
       id: 'opening',
       label: 'The opening phrase',
       lesson: 'mario-theme',
-      description: 'The iconic 2-bar opening — straight 16ths approximation of the swing melody.',
-      // 2 bars per cycle, 16 16ths total. Rest pattern matches the original
-      // syncopation roughly (each "~" is a 16th rest).
+      description:
+        'The iconic 2-bar opening — the "duh-duh duh duh-duh" then the G5/G4 octave drop that everyone recognizes.',
+      // 2 bars per cycle, 8 positions per bar (each position = 8th note).
+      // Bar 1: E5 E5 ~ E5 ~ C5 E5 ~  (the famous "duh-duh duh duh-duh" opening)
+      // Bar 2: G5 ~ ~ ~ G4 ~ ~ ~     (high G, then a beat later low G — THE octave drop)
       code: `setcpm(100/8)
 note("e5 e5 ~ e5 ~ c5 e5 ~ g5 ~ ~ ~ g4 ~ ~ ~")
   .s("square").lpf(2500)

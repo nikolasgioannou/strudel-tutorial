@@ -9,7 +9,7 @@ export const meta: LessonMeta = {
   slug: 'take-on-me',
   title: 'Synth design — Take On Me',
   blurb: "Filters and envelopes. Shape a raw waveform into a-ha's iconic Juno-60 lead.",
-  order: 11,
+  order: 13,
 };
 
 const leadStage = requireStage(takeOnMe, 'lead-riff');

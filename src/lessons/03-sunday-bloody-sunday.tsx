@@ -18,11 +18,12 @@ export function Lesson() {
   return (
     <div className="space-y-6 text-neutral-300">
       <p>
-        U2's drummer Larry Mullen Jr opens <em>Sunday Bloody Sunday</em> with one of the most
+        U2&apos;s drummer Larry Mullen Jr opens <em>Sunday Bloody Sunday</em> with one of the most
         recognizable drum patterns in rock: a relentless &quot;machine-gun&quot; military beat.
         Mullen recorded it at the base of a stairwell in Windmill Lane Studios to capture natural
-        reverb. The pattern is simple on paper — backbeat plus hi-hats — but the hi-hats are{' '}
-        <em>16th notes</em>, four per beat, giving it that driving, almost-marching feel.
+        reverb. The pattern is simple — kick on every beat (four-on-the-floor), snare on the
+        backbeat — but the hi-hats are <em>16th notes</em>, four per beat. Those dense hats are what
+        give it the driving, almost-marching feel.
       </p>
 
       <SongCard track={sundayBloodySunday} />
